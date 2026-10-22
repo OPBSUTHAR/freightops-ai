@@ -66,6 +66,8 @@ export default function App() {
   }, []);
 
   const developer = meta?.developer || 'Omprakash Suthar';
+  const github = meta?.developer_github || 'OPBSUTHAR';
+  const githubUrl = meta?.github_url || `https://github.com/${github}`;
   const llmMode = meta?.llm_mode === 'rules' || !meta ? 'Rules baseline' : 'Model routed';
 
   return (
@@ -106,6 +108,9 @@ export default function App() {
             <div className="credit-copy">
               <span>Designed &amp; built by</span>
               <strong>{developer}</strong>
+              <a className="credit-github" href={githubUrl} target="_blank" rel="noreferrer">
+                @{github}
+              </a>
               <small>{meta?.developer_role || 'AI / Platform Engineer'}</small>
             </div>
           </div>
@@ -158,7 +163,10 @@ export default function App() {
 
           <footer className="foot">
             <span>
-              FreightOps AI · designed and built by <strong>{developer}</strong>
+              FreightOps AI · designed and built by <strong>{developer}</strong> · GitHub{' '}
+              <a href={githubUrl} target="_blank" rel="noreferrer">
+                @{github}
+              </a>
             </span>
             <span className="foot-right">
               <span className="dot-sep" /> Python · FastAPI · MongoDB-shaped APIs · React

@@ -23,6 +23,7 @@ class Settings:
     app_name: str = "FreightOps AI"
     version: str = "1.0.0"
     developer: str = "Omprakash Suthar"
+    developer_github: str = "OPBSUTHAR"
     developer_role: str = "AI / Platform Engineer - freight operations"
 
     # Storage: memory (default, zero-setup) or mongo.

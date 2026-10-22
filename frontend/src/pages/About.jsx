@@ -44,6 +44,8 @@ const STACK = ['Python 3', 'FastAPI', 'Pydantic', 'MongoDB', 'React 18', 'Vite',
 
 export default function About({ meta }) {
   const developer = meta?.developer || 'Omprakash Suthar';
+  const github = meta?.developer_github || 'OPBSUTHAR';
+  const githubUrl = meta?.github_url || `https://github.com/${github}`;
   const role = meta?.developer_role || 'AI / Platform Engineer — freight operations';
 
   return (
@@ -54,7 +56,12 @@ export default function About({ meta }) {
           <div>
             <div className="eyebrow">Designed &amp; built by</div>
             <h1>{developer}</h1>
-            <p className="about-role">{role}</p>
+            <p className="about-role">
+              {role} ·{' '}
+              <a href={githubUrl} target="_blank" rel="noreferrer">
+                GitHub @{github}
+              </a>
+            </p>
           </div>
         </div>
         <p className="about-lede">
@@ -222,7 +229,12 @@ export default function About({ meta }) {
         <div>
           <div className="eyebrow">Built by</div>
           <strong>{developer}</strong>
-          <span>{role}</span>
+          <span>
+            <a href={githubUrl} target="_blank" rel="noreferrer">
+              @{github}
+            </a>{' '}
+            · {role}
+          </span>
         </div>
         <p>
           FreightOps AI · v{meta?.version || '1.0.0'} · planner, executor and reviewer agents with a human gate on every

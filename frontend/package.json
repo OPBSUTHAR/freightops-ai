@@ -2,6 +2,7 @@
   "name": "freightops-console",
   "private": true,
   "version": "1.0.0",
+  "author": "Omprakash Suthar (@OPBSUTHAR)",
   "type": "module",
   "scripts": {
     "dev": "vite",

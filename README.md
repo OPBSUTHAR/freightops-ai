@@ -1,6 +1,6 @@
 # FreightOps AI — Agent Control Tower
 
-**Designed and built by Omprakash Suthar — AI / Platform Engineer, freight operations.**
+**Designed and built by [Omprakash Suthar (@OPBSUTHAR)](https://github.com/OPBSUTHAR) — AI / Platform Engineer, freight operations.**
 
 **Live demo:** [freightops-ai.vercel.app](https://freightops-ai.vercel.app) · **Source:** [github.com/OPBSUTHAR/freightops-ai](https://github.com/OPBSUTHAR/freightops-ai)
 
@@ -266,6 +266,6 @@ notes.
 ---
 
 <p align="center">
-  <strong>FreightOps AI</strong> · designed and built by <strong>Omprakash Suthar</strong><br/>
+  <strong>FreightOps AI</strong> · designed and built by <strong>Omprakash Suthar</strong> (<a href="https://github.com/OPBSUTHAR">@OPBSUTHAR</a>)<br/>
   Planner · executor · reviewer agents with a human gate on every decision that matters.
 </p>

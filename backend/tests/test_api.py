@@ -19,6 +19,8 @@ def test_health_and_meta(client):
     assert health["status"] == "ok"
     meta = client.get("/api/meta").json()
     assert meta["developer"] == "Omprakash Suthar"
+    assert meta["developer_github"] == "OPBSUTHAR"
+    assert "@OPBSUTHAR" in meta["credit"]
     assert len(meta["agents"]) >= 5
 
 
