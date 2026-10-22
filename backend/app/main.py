@@ -1,6 +1,7 @@
 """Application entrypoint. Run: uvicorn app.main:app --reload --port 8000"""
 from __future__ import annotations
 
+import os
 from contextlib import asynccontextmanager
 from pathlib import Path
 
@@ -48,5 +49,6 @@ async def healthz() -> dict[str, str]:
     return {"status": "ok"}
 
 
-if FRONTEND_DIST.exists():
+# On Vercel the console is a separate service and the API must not shadow it.
+if FRONTEND_DIST.exists() and not os.getenv("VERCEL"):
     app.mount("/", StaticFiles(directory=str(FRONTEND_DIST), html=True), name="console")
