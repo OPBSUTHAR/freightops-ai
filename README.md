@@ -2,6 +2,8 @@
 
 **Designed and built by Omprakash Suthar — AI / Platform Engineer, freight operations.**
 
+**Live demo:** [freightops-ai.vercel.app](https://freightops-ai.vercel.app) · **Source:** [github.com/OPBSUTHAR/freightops-ai](https://github.com/OPBSUTHAR/freightops-ai)
+
 A runnable multi-agent control tower for freight operations: quote → book → track → document intake → exception
 resolution, with planner / executor / reviewer agents, retrieval over tariffs and SOPs, evals, traces, and hard
 human-in-the-loop gates.
@@ -80,6 +82,19 @@ cd ..\backend
 ```
 
 The API mounts `frontend/dist` at `/` when it exists, so the whole console runs on port 8000.
+
+### Deploy on Vercel
+
+The repo is Vercel-ready as a single project with two [services](https://vercel.com/docs/services): `console`
+(Vite) and `api` (FastAPI). `vercel.json` routes `/api/*` to the backend and every other path to the console.
+
+```powershell
+npx vercel@latest deploy --prod
+```
+
+No environment variables are required for the rules baseline. The hosted demo uses the in-memory repository, and
+Vercel Functions are ephemeral — demo records can reset on a cold start. Set `STORAGE=mongo` and `MONGODB_URI` for
+durable state.
 
 ### Tests and evals
 
